@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <ditzz charset="UTF-8">
+    <ditzz name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point M Gamers - Top Up FF</title>
+    <style>
+        :root {
+            --bg-dark: #060b13;
+            --bg-card: #101a2b;
+            --primary-blue: #007bff;
+            --accent-blue: #00d4ff;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--primary-blue);
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        h3 { color: var(--accent-blue); margin-top: 0; font-size: 1.1rem; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #1e2d44;
+            background: #0d1521;
+            color: white;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--accent-blue); }
+
+        .diamond-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .diamond-item {
+            background: #16243a;
+            padding: 15px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .diamond-item:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .diamond-item.active {
+            background: var(--primary-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .dm-val { font-weight: bold; display: block; font-size: 0.95rem; }
+        .dm-price { font-size: 0.85rem; color: #00ffcc; font-weight: 600; }
+        .active .dm-price { color: white; }
+
+        .btn-order {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(45deg, #0056b3, #00d4ff);
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>POINT M GAMERS</h1>
+        <p style="color: var(--accent-blue);">Top Up Free Fire - Dana Pelajar</p>
+    </header>
+
+    <!-- Step 1 -->
+    <div class="card">
+        <h3>1. Masukkan User ID</h3>
+        <input type="number" id="playerId" placeholder="Contoh: 12345678" required>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card">
+        <h3>2. Pilih Nominal Diamond</h3>
+        <div class="diamond-grid" id="diamondGrid">
+            <!-- Diamond List Berdasarkan Data Kamu -->
+            <div class="diamond-item" onclick="selectDiamond('5 Diamond', '1.000')"><span class="dm-val">5 Diamond</span><span class="dm-price">Rp 1.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('12 Diamond', '2.000')"><span class="dm-val">12 Diamond</span><span class="dm-price">Rp 2.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('50 DIAMOND', '8.000')"><span class="dm-val">50 DIAMOND</span><span class="dm-price">Rp 8.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('74 DIAMOND', '11.000')"><span class="dm-val">74 DIAMOND</span><span class="dm-price">Rp 11.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('91 DIAMOND', '13.000')"><span class="dm-val">91 DIAMOND</span><span class="dm-price">Rp 13.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('147 DIAMOND', '20.000')"><span class="dm-val">147 DIAMOND</span><span class="dm-price">Rp 20.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('373 DIAMOND', '52.000')"><span class="dm-val">373 DIAMOND</span><span class="dm-price">Rp 52.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('756 DIAMOND', '102.000')"><span class="dm-val">756 DIAMOND</span><span class="dm-price">Rp 102.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('1.523 DIAMOND', '205.000')"><span class="dm-val">1.523 DIAMOND</span><span class="dm-price">Rp 205.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('2.289 DIAMOND', '302.000')"><span class="dm-val">2.289 DIAMOND</span><span class="dm-price">Rp 302.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('3.822 DIAMOND', '510.000')"><span class="dm-val">3.822 DIAMOND</span><span class="dm-price">Rp 510.000</span></div>
+            <div class="diamond-item" onclick="selectDiamond('7.655 DIAMOND', '1.010.000')"><span class="dm-val">7.655 DIAMOND</span><span class="dm-price">Rp 1.010.000</span></div>
+             
+        </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card">
+        <h3>3. Pembayaran</h3>
+        <select id="paymentMethod">
+            <option value="DANA (089513192447)">DANA - 089513192447</option>
+            <option value="GOPAY (083857251778)">GOPAY - 083857251778</option>
+        </select>
+        <p style="font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; color: #ffcc00;">
+            ⚠️ Silahkan transfer ke nomor di atas sebelum klik tombol beli.
+        </p>
+    </div>
+
+    <button class="btn-order" onclick="sendOrder()">BELI SEKARANG</button>
+
+    <div class="footer-note">
+        &copy; 2024 Point M Gamers. All Rights Reserved.
+    </div>
+</div>
+
+<script>
+    let selectedDiamond = "";
+    let selectedPrice = "";
+
+    function selectDiamond(item, price) {
+        selectedDiamond = item;
+        selectedPrice = price;
+        document.querySelectorAll('.diamond-item').forEach(el => el.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+
+    function sendOrder() {
+        const id = document.getElementById('playerId').value;
+        const payment = document.getElementById('paymentMethod').value;
+        const waNumber = "6289513192447"; // Nomor WA Admin Utama
+        const waNumber = "6283857251778"; // Nomor WA Admin Kedua
+
+        if (!id || !selectedDiamond) {
+            alert("Silahkan masukkan ID Player dan pilih nominal Diamond!");
+            return;
+        }
+
+        const text = `Halo Point M Gamers,%0A` +
+                     `Saya ingin Top Up Free Fire:%0A%0A` +
+                     `User ID: ${id}%0A` +
+                     `Nominal: ${selectedDiamond}%0A` +
+                     `Harga: Rp ${selectedPrice}%0A` +
+                     `Metode Bayar: ${payment}%0A%0A` +
+                     `Saya sudah melakukan transfer, mohon diproses.`;
+
+        window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
